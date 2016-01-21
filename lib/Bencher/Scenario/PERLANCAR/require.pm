@@ -12,17 +12,31 @@ our $scenario = {
     description => <<'_',
 
 `require()` can be put inside a block (like a subroutine) to delay loading a
-module.
+module:
 
-When a module is already loaded, `require()` should be cheap enough: it just
+    sub foo {
+        require Some::Module;
+        ...
+    }
+
+After a module is loaded, the next `require()` should be cheap enough: it just
 checks against `%INC` to see if an entry for the module is there. So it should
 just be the cost of a single hash lookup.
 
-However, for very tight loops/subroutines, you can avoid this cost by putting
-the `require()` inside a state variable, which will cause the `require()` to be
-evaluated just once.
+However, for very tight loops/subroutines, you can avoid (reduce) this cost by
+putting the `require()` inside a state variable, which will cause the
+`require()` to be evaluated just once:
 
-Or, you can also put the `require()` statement outside of the block/subroutine.
+    sub foo {
+        state $dummy = do { require Some::Module };
+        ...
+    }
+
+There is a per-sub-invocation cost too of setting up the state variable
+`$dummy`. But this cost is several times smaller.
+
+Or, alternatively, you might also want to decide to put the `require()`
+statement outside of the block/subroutine.
 
 _
     participants => [
