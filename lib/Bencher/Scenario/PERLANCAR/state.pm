@@ -9,7 +9,11 @@ use warnings;
 
 our $scenario = {
     summary => 'Benchmark overhead of state (vs my) variables in a tight subroutine',
-    precision => 0.001,
+    description => <<'_',
+
+Each variable declaration is not free.
+
+_
     participants => [
         {
             name=>'baseline_0',
