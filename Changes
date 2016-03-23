@@ -1,5 +1,11 @@
 Revision history for Bencher-Scenarios-PERLANCAR
 
+0.03    2016-03-23 (PERLANCAR)
+
+        - Add scenarios: PERLANCAR::PERLANCARwarningsStartup,
+          PERLANCAR::CommonModulesStartup, PERLANCAR::pass_list_vs_array.
+
+
 0.02    2016-01-21 (PERLANCAR)
 
         - Add scenario: PERLANCAR::state.
