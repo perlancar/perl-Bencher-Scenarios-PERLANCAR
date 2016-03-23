@@ -11,9 +11,11 @@ our $scenario = {
     summary => 'Benchmark startup overhead of warnings vs PERLANCAR::warnings::*',
     module_startup => 1,
     participants => [
-        {module=>'warnings'},
-        {module=>'PERLANCAR::warnings::all'},
-        #{module=>'PERLANCAR::warnings::default'},
+        {module  => 'strict'},
+        {module  => 'warnings'},
+        {modules => ['strict', 'warnings']},
+        {module  => 'PERLANCAR::warnings::all'},
+        {modules => ['strict', 'PERLANCAR::warnings::all']},
     ],
 };
 
