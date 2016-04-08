@@ -21,20 +21,19 @@ our $scenario = {
     participants => [
         {
             name => 'grep',
-            #code_template=>'grep { $_ <op> <needle> } @main::<haystack>',
-            code_template=>'grep { $_ == <needle> } @main::<haystack:raw>',
+            code_template => 'grep { $_ <op:raw> <needle> } @main::<haystack:raw>',
         },
         {
             name => 'first',
-            code_template=>'first { $_ <op:raw> <needle> } @main::<haystack:raw>',
+            code_template => 'first { $_ <op:raw> <needle> } @main::<haystack:raw>',
         },
         {
             name => 'smartmatch',
-            code_template=>'use experimental "smartmatch"; $_ ~~ @main::<haystack:raw>',
+            code_template => 'use experimental "smartmatch"; <needle> ~~ @main::<haystack:raw>',
         },
     ],
     datasets => [
-        {name => '100' , args => {'haystack'=>'ary_100' , op => '==', 'needle@' => [1, 50, 100]}},
+        {name => '100 items' , args => {'haystack'=>'ary_100' , op => '==', 'needle@' => [1, 50, 100]}},
         {name => '10k' , args => {'haystack'=>'ary_10k' , op => '==', 'needle@' => [1, 5000, 10_000]}},
         {name => '1mil', args => {'haystack'=>'ary_1mil', op => '==', 'needle@' => [1, 500_000, 1000_000]}},
     ],
