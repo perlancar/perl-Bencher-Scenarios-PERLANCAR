@@ -28,6 +28,10 @@ our $scenario = {
             code_template => 'first { $_ <op:raw> <needle> } @main::<haystack:raw>',
         },
         {
+            name => 'first (array)',
+            fcall_template => 'Array::AllUtils::first(sub { $_ <op:raw> <needle> }, \\@main::<haystack:raw>)',
+        },
+        {
             name => 'smartmatch',
             code_template => 'use experimental "smartmatch"; <needle> ~~ @main::<haystack:raw>',
         },
