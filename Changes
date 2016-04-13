@@ -1,5 +1,10 @@
 Revision history for Bencher-Scenarios-PERLANCAR
 
+0.04    2016-04-13 (PERLANCAR)
+
+        - Add scenario: PERLANCAR::In.
+
+
 0.03    2016-03-23 (PERLANCAR)
 
         - Add scenarios: PERLANCAR::PERLANCARwarningsStartup,
