@@ -1,8 +1,3 @@
-package
-    main;
-
-use List::Util 'first';
-
 package Bencher::Scenario::PERLANCAR::In;
 
 # DATE
@@ -15,6 +10,8 @@ use warnings;
 @main::ary_100  = (1..100);
 @main::ary_10k  = (1..10_000);
 @main::ary_1mil = (1..1000_000);
+
+eval "package main; use List::Util 'first'"; die if $@;
 
 our $scenario = {
     summary => 'Benchmark the task of checking whether an item is in an array',
