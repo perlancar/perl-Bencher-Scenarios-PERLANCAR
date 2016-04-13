@@ -1,5 +1,13 @@
 Revision history for Bencher-Scenarios-PERLANCAR
 
+0.05    2016-04-13 (PERLANCAR)
+
+        - No functional changes.
+
+        - Rephrase so we avoid multiple package declaration that confuses some
+          DZ plugin.
+
+
 0.04    2016-04-13 (PERLANCAR)
 
         - Add scenario: PERLANCAR::In.
