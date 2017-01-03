@@ -11,7 +11,7 @@ our $scenario = {
     summary => 'Benchmark grep() in a bool context',
     description => <<'_',
 
-This is to check if `grep()` can shortcut in a bool context.
+Finding a nice solution for a shortcutting grep like first.
 
 _
     participants => [
@@ -23,6 +23,21 @@ _
             name=>'grep+die',
             summary => 'use grep + die to simulate shortcutting',
             code_template=>'state $haystack = <haystack>; if (eval { grep {$_ == <needle> && die} @$haystack }, $@) { 1 } else { 0 }',
+            description => <<'_',
+
+Not a very good idiom. It kind of abuses die(), and has to suffer the overhead
+of eval(). Most important of all, it's less clear.
+
+_
+        },
+        {
+            name=>'foreach+last+do',
+            code_template=>'state $haystack = <haystack>; if (do { my $found; $_ == <needle> and $found = 1 and last for @$haystack; $found }) { 1 } else { 0 }',
+            description => <<'_',
+
+This is a nicer idiom, courtesy of tybalt89 in http://perlmonks.org/?node_id=1178871.
+
+_
         },
         {
             module => 'List::Util',
@@ -45,3 +60,8 @@ _
 
 1;
 # ABSTRACT:
+
+=head1 BENCHMARK NOTES
+
+I'll settle with foreach+last+do for larger lists, and plain grep in other
+cases.
