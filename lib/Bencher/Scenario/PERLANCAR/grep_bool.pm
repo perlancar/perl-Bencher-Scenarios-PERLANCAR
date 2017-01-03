@@ -40,6 +40,10 @@ This is a nicer idiom, courtesy of tybalt89 in http://perlmonks.org/?node_id=117
 _
         },
         {
+            name=>'sub+foreach+return',
+            code_template=>'state $haystack = <haystack>; if (sub { $_ == <needle> and return 1 for @$haystack; 0 }->()) { 1 } else { 0 }',
+        },
+        {
             module => 'List::Util',
             function=>'first',
             code_template=>'state $haystack = <haystack>; if (List::Util::first(sub {$_ == <needle>}, @$haystack)) { 1 } else { 0 }',
