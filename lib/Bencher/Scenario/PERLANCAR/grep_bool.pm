@@ -49,6 +49,11 @@ _
             code_template=>'state $haystack = <haystack>; if (List::Util::first(sub {$_ == <needle>}, @$haystack)) { 1 } else { 0 }',
         },
         {
+            module => 'List::MoreUtils',
+            function=>'firstval',
+            code_template=>'state $haystack = <haystack>; if (List::MoreUtils::firstval(sub {$_ == <needle>}, @$haystack)) { 1 } else { 0 }',
+        },
+        {
             module => 'Array::AllUtils',
             function=>'first',
             code_template=>'state $haystack = <haystack>; if (Array::AllUtils::first(sub {$_ == <needle>}, $haystack)) { 1 } else { 0 }',
