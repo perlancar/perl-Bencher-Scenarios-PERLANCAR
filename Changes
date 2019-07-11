@@ -1,4 +1,4 @@
-0.06    2017-01-25 (PERLANCAR)
+0.06    2017-01-25  Released-By: PERLANCAR
 
         - Add scenario: PERLANCAR::grep_bool,
           PERLANCAR::method_call_using_variable, PERLANCAR::pkg_to_pkgpm.
@@ -8,7 +8,7 @@
           type=x_benchmarks.
 
 
-0.05    2016-04-13 (PERLANCAR)
+0.05    2016-04-13  Released-By: PERLANCAR
 
         - No functional changes.
 
@@ -16,24 +16,24 @@
           DZ plugin.
 
 
-0.04    2016-04-13 (PERLANCAR)
+0.04    2016-04-13  Released-By: PERLANCAR
 
         - Add scenario: PERLANCAR::In.
 
 
-0.03    2016-03-23 (PERLANCAR)
+0.03    2016-03-23  Released-By: PERLANCAR
 
         - Add scenarios: PERLANCAR::PERLANCARwarningsStartup,
           PERLANCAR::CommonModulesStartup, PERLANCAR::pass_list_vs_array.
 
 
-0.02    2016-01-21 (PERLANCAR)
+0.02    2016-01-21  Released-By: PERLANCAR
 
         - Add scenario: PERLANCAR::state.
 
         - Add some notes.
 
 
-0.01    2016-01-21 (PERLANCAR)
+0.01    2016-01-21  Released-By: PERLANCAR
 
         - First release.
